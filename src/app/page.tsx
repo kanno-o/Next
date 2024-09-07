@@ -13,7 +13,10 @@ async function fetchAllTodos() {
 export default async function Home() {
   const todos = await fetchAllTodos();
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col justify-center items-center">
+       <div className="w-1/2 text-center my-3 py-3 rounded-lg bg-blue-300">
+        <Link href="/register">新規タスクを登録する</Link>
+       </div>
       {todos.map((post: TodoType) => (
         <div
           key={post.id}
