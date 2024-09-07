@@ -15,7 +15,6 @@ export async function main() {
 // Todo取得
 export const GET = async (req: Request, res: NextResponse) => {
   try {
-    console.log("aaa");
     await main();
     const todos = await prisma.todo.findMany();
     return NextResponse.json({ message: "success", todos }, { status: 200 });
@@ -30,7 +29,6 @@ export const GET = async (req: Request, res: NextResponse) => {
 export const POST = async (req: Request, res: NextResponse) => {
   try {
     const { title, content } = await req.json();
-
     await main();
     const todo = await prisma.todo.create({ data: { title, content } });
     return NextResponse.json({ message: "success", todo }, { status: 201 });
