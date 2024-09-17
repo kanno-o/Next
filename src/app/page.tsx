@@ -1,5 +1,8 @@
 import { TodoType } from "@/types";
 import Link from "next/link";
+import { test } from "./test";
+
+test();
 
 async function fetchAllTodos() {
   const res = await fetch(`http://localhost:3000/api/todo`, {
